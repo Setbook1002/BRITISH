@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>British Homes Direct | Support & Refund Hub</title>
+  <meta
+    name="description"
+    content="British Homes Direct Support & Refund Hub. Manage returns, refunds, complaints and delivery enquiries with our dedicated UK customer care team."
+  />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #f0f4fa;
+      --text: #16202a;
+      --muted: #5e6b78;
+      --primary: #0f4c81;
+      --primary-2: #12395b;
+      --accent: #0d8a6a;
+      --danger: #b23838;
+      --border: #d9e2ec;
+      --shadow: 0 12px 40px rgba(15, 31, 51, 0.08);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f6f9fc 0%, #eef4fa 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #0e2d49;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 8px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    header.hero {
+      padding: 28px 0 44px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0 26px;
+      flex-wrap: wrap;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger {
+      display: block;
+      width: 24px;
+      height: 20px;
+      position: relative;
+    }
+
+    .hamburger::before,
+    .hamburger::after,
+    .hamburger {
+      content: "";
+      position: absolute;
+      left: 0;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger {
+      background: var(--primary);
+      height: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+
+    .hamburger::before {
+      top: 0;
+      height: 3px;
+      width: 100%;
+    }
+
+    .hamburger::after {
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+    }
+
+    .nav-toggle.active .hamburger {
+      background: transparent;
+    }
+
+    .nav-toggle.active .hamburger::before {
+      transform: rotate(45deg);
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%);
+    }
+
+    .nav-toggle.active .hamburger::after {
+      transform: rotate(-45deg);
+      bottom: 50%;
+      transform: rotate(-45deg) translateY(50%);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--primary-2);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      background: rgba(15, 76, 129, 0.08);
+    }
+
+    .nav-link {
+      display: block !important;
+      white-space: nowrap;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel,
+    .stat-card,
+    .faq-item,
+    .wizard-card,
+    .tracker-card,
+    .cookie-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-card {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eaf3fb;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-card p.lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 62ch;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 0.98rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0d406d;
+    }
+
+    .btn-secondary {
+      background: #eff5fb;
+      color: var(--primary-2);
+      border-color: #dce6f0;
+    }
+
+    .btn-secondary:hover {
+      background: #e7f0f9;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      background: #f7fafc;
+    }
+
+    .meta-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 26px;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .stat-card {
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary-2);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+    }
+
+    .section-head h3 {
+      margin: 0 0 8px;
+      font-size: 1.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #8ab3d8;
+      box-shadow: 0 0 0 4px rgba(15, 76, 129, 0.08);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .quick-action {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .quick-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 42px rgba(15, 31, 51, 0.11);
+    }
+
+    .quick-action h4 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .quick-action p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .wizard-card,
+    .tracker-card {
+      padding: 24px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .step {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--muted);
+      border-radius: 12px;
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .step.active {
+      background: #e7f1fb;
+      border-color: #b6cfe6;
+      color: var(--primary);
+    }
+
+    .wizard-page {
+      display: none;
+    }
+
+    .wizard-page.active {
+      display: block;
+    }
+
+    .wizard-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .faq-wrap {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: #fff;
+      border: 0;
+      text-align: left;
+      padding: 20px 22px;
+      font: inherit;
+      font-weight: 800;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 22px 20px;
+      color: var(--muted);
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      color: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .support-strip {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 20px 22px;
+      background: linear-gradient(135deg, #10395d 0%, #0f4c81 100%);
+      border-radius: var(--radius);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .support-strip h4,
+    .support-strip p {
+      margin: 0;
+    }
+
+    .footer {
+      padding: 32px 0 110px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .success-message,
+    .error-message {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .success-message {
+      background: #e9f9f2;
+      border: 1px solid #bce9d3;
+      color: #166b50;
+    }
+
+    .error-message {
+      background: #fff1f1;
+      border: 1px solid #efc9c9;
+      color: #8a2f2f;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+      padding: 18px;
+      display: none;
+    }
+
+    .cookie-banner.show {
+      display: block;
+    }
+
+    .cookie-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-copy h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .cookie-copy p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 70ch;
+      font-size: 0.95rem;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .small-muted {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        width: 100%;
+        text-align: left;
+      }
+
+      .quick-action {
+        min-height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 16px;
+        border-radius: 8px;
+        transition: background 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        background: #f0f4fa;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid,
+      .grid-2,
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .topbar-left,
+      .topbar-right {
+        width: 100%;
+        gap: 8px;
+      }
+
+      .chip {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+      }
+
+      .container {
+        width: min(100% - 16px, var(--max));
+      }
+
+      header.hero {
+        padding: 20px 0 32px;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .hero-card h2 {
+        font-size: clamp(1.6rem, 3vw, 2.5rem);
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      section {
+        padding: 20px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-card,
+      .panel,
+      .card,
+      .wizard-card,
+      .tracker-card {
+        padding: 16px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-value {
+        font-size: 1.4rem;
+      }
+
+      .hero-card h2 {
+        font-size: 1.6rem;
+      }
+
+      .footer-inner,
+      .cookie-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .brand h1 {
+        font-size: 1.2rem;
+      }
+
+      .brand p {
+        font-size: 0.9rem;
+      }
+
+      .section-head h3 {
+        font-size: 1.4rem;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 44px;
+      }
+
+      .faq-question {
+        padding: 16px 18px;
+        font-size: 0.95rem;
+      }
+
+      .faq-answer {
+        padding: 0 18px 16px;
+        font-size: 0.95rem;
+      }
+
+      .eyebrow {
+        font-size: 0.8rem;
+      }
+
+      .hero-card p.lead {
+        font-size: 1rem;
+      }
+
+      .support-strip {
+        gap: 12px;
+        padding: 16px 18px;
+        flex-direction: column;
+      }
+
+      .support-strip h4 {
+        font-size: 1rem;
+      }
+
+      .support-strip p {
+        font-size: 0.9rem;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+      }
+
+      input,
+      select,
+      textarea {
+        min-height: 44px;
+        padding: 12px 12px;
+        font-size: 16px;
+      }
+
+      textarea {
+        min-height: 120px;
+      }
+
+      .wizard-actions {
+        flex-direction: column-reverse;
+      }
+
+      .wizard-actions .btn {
+        width: 100%;
+      }
+
+      .cookie-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .cookie-actions .btn {
+        width: 100%;
+      }
+
+      .topbar {
+        font-size: 0.9rem;
+      }
+
+      .topbar-inner {
+        padding: 8px 0;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --radius: 14px;
+        --radius-sm: 10px;
+      }
+
+      .container {
+        width: min(100% - 12px, var(--max));
+      }
+
+      .hero-card {
+        padding: 14px;
+      }
+
+      .hero-card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      .hero-card p.lead {
+        font-size: 0.95rem;
+      }
+
+      .panel {
+        padding: 14px;
+      }
+
+      .panel h3 {
+        font-size: 1.05rem;
+      }
+
+      .section-head h3 {
+        font-size: 1.2rem;
+      }
+
+      header.hero {
+        padding: 16px 0 24px;
+      }
+
+      section {
+        padding: 16px 0;
+      }
+
+      .stat-card {
+        padding: 16px 12px;
+      }
+
+      .stat-value {
+        font-size: 1.2rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+      }
+
+      .form-group {
+        margin-bottom: 12px;
+      }
+
+      label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 10px 10px;
+        font-size: 16px;
+      }
+
+      .btn {
+        min-height: 40px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+      }
+
+      .eyebrow {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+      }
+
+      .faq-question {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+        gap: 10px;
+      }
+
+      .faq-toggle {
+        font-size: 1.1rem;
+      }
+
+      .quick-action {
+        padding: 16px;
+      }
+
+      .quick-action h4 {
+        font-size: 1rem;
+      }
+
+      .quick-action p {
+        font-size: 0.9rem;
+      }
+
+      .wizard-card,
+      .tracker-card {
+        padding: 14px;
+      }
+
+      .steps {
+        gap: 6px;
+        margin: 14px 0 16px;
+      }
+
+      .step {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+      }
+
+      .support-strip {
+        padding: 14px 16px;
+      }
+
+      .support-strip h4 {
+        font-size: 0.95rem;
+      }
+
+      .support-strip p {
+        font-size: 0.85rem;
+      }
+
+      .meta-note {
+        font-size: 0.9rem;
+      }
+
+      .small-muted {
+        font-size: 0.85rem;
+      }
+
+      .card {
+        padding: 16px;
+      }
+    }
+
+    /* Landscape mode adjustments */
+    @media (max-height: 600px) and (orientation: landscape) {
+      header.hero {
+        padding: 12px 0 16px;
+      }
+
+      .hero-card {
+        padding: 16px;
+      }
+
+      .hero-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+
+      .cta-row {
+        margin-bottom: 12px;
+      }
+
+      section {
+        padding: 16px 0;
+      }
+    }
+
+    /* Tablet portrait improvements */
+    @media (min-width: 641px) and (max-width: 768px) {
+      .steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Large touch device optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .btn,
+      .faq-question,
+      .quick-action {
+        min-height: 48px;
+      }
+
+      input,
+      select,
+      textarea {
+        min-height: 48px;
+      }
+
+      .btn-primary:active {
+        background: #0a3254;
+      }
+
+      .btn-secondary:active {
+        background: #dfe9f2;
+      }
+
+      .btn-outline:active {
+        background: #f0f4fa;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="chip">British Homes Direct</span>
+        <span class="chip">Support & Refund Hub</span>
+      </div>
+      <div class="topbar-right">
+        <a class="chip" href="tel:+447474713752">+447474713752</a>
+        <a class="chip" href="https://wa.me/447474713752" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="chip" href="#track-case">Customer Hub</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <h1>British Homes Direct</h1>
+          <p>Dedicated UK Customer Care</p>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav-links" id="navMenu" aria-label="Primary navigation">
+          <a href="#complaints" class="nav-link">Complaints</a>
+          <a href="#returns" class="nav-link">Returns & Refunds</a>
+          <a href="#wizard" class="nav-link">Resolution Wizard</a>
+          <a href="#track-case" class="nav-link">Track Case</a>
+          <a href="#help-centre" class="nav-link">Help Centre</a>
+        </nav>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">✓ Enforced 30-Day Money-Back Guarantee · Dedicated UK Resolutions Desk</div>
+          <h2>Welcome — let's resolve your order, properly.</h2>
+          <p class="lead">
+            A calm, professional support hub for British Homes Direct customers to manage returns,
+            refunds and delivery enquiries. Every case is routed directly to a real UK specialist.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+447474713752">Call +447474713752</a>
+            <a class="btn btn-secondary" href="https://wa.me/447474713752" target="_blank" rel="noopener">WhatsApp Us</a>
+            <a class="btn btn-outline" href="mailto:britishhomesdirecthelpline@gmail.com">Email Us</a>
+            <a class="btn btn-outline" href="#complaints">Lodge a Complaint</a>
+          </div>
+
+          <p class="meta-note">
+            Dedicated UK Customer Care with formal complaint routing, return handling and delivery support.
+          </p>
+        </div>
+
+        <div class="hero-side">
+          <div class="panel">
+            <h3>Direct support channels</h3>
+            <p>
+              Speak to the resolutions desk by phone, WhatsApp or email. Formal complaints are submitted
+              directly to our case handling inbox.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Fast case triage</h3>
+            <p>
+              For the fastest response, include your order number, postcode, issue type and any photo evidence
+              where relevant.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="Support statistics">
+        <div class="stat-card">
+          <div class="stat-value">120k+</div>
+          <div class="stat-label">UK orders resolved</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">&lt;4h</div>
+          <div class="stat-label">Avg. response time</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">98.6%</div>
+          <div class="stat-label">First-contact resolution</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">£2.4M</div>
+          <div class="stat-label">Refunds processed YTD</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="complaints">
+      <div class="container">
+        <div class="section-head">
+          <h3>Formal Complaint Portal</h3>
+          <p>
+            Lodge a complaint with British Homes Direct. Direct submission to our UK resolutions desk.
+            Average response time: under 4 hours.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <form
+              class="web3form"
+              data-success="Your complaint has been submitted to the UK resolutions desk."
+              data-subject="New Formal Complaint - British Homes Direct"
+              novalidate
+            >
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+              <input type="hidden" name="subject" value="New Formal Complaint - British Homes Direct" />
+              <input type="hidden" name="from_name" value="British Homes Direct Support Hub" />
+              <input type="hidden" name="redirect" value="" />
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+              <div class="form-group">
+                <label for="complaint-name">Full name</label>
+                <input id="complaint-name" name="full_name" type="text" placeholder="Jane Whitfield" required />
+              </div>
+
+              <div class="form-group">
+                <label for="complaint-email">Email address</label>
+                <input id="complaint-email" name="email" type="email" placeholder="jane@example.co.uk" required />
+              </div>
+
+              <div class="form-group">
+                <label for="complaint-phone">Phone number</label>
+                <input id="complaint-phone" name="phone" type="tel" placeholder="+44 7474 713752" />
+              </div>
+
+              <div class="form-group">
+                <label for="complaint-order">Order number</label>
+                <input id="complaint-order" name="order_number" type="text" placeholder="BHD-10492" required />
+              </div>
+
+              <div class="form-group">
+                <label for="complaint-issue">Issue type</label>
+                <select id="complaint-issue" name="issue_type" required>
+                  <option value="">Select an issue</option>
+                  <option>Damaged on arrival</option>
+                  <option>Missing item</option>
+                  <option>Refund delay</option>
+                  <option>Wrong item received</option>
+                  <option>Courier / delivery issue</option>
+                  <option>Return request</option>
+                  <option>Other complaint</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="complaint-message">Describe your complaint</label>
+                <textarea
+                  id="complaint-message"
+                  name="message"
+                  placeholder="Tell us exactly what happened — dates, parcel condition, any prior correspondence..."
+                  required
+                ></textarea>
+              </div>
+
+              <p class="form-note">GDPR compliant · Delivered to britishhomesdirecthelpline@gmail.com</p>
+
+              <button type="submit" class="btn btn-primary">Submit complaint</button>
+
+              <div class="success-message"></div>
+              <div class="error-message"></div>
+            </form>
+          </div>
+
+          <div class="quick-actions" id="returns">
+            <a class="quick-action" href="#wizard">
+              <h4>Request Return / Refund</h4>
+              <p>30-day money-back guarantee</p>
+            </a>
+
+            <a class="quick-action" href="#wizard">
+              <h4>File a Damaged Goods Report</h4>
+              <p>Photo evidence supported</p>
+            </a>
+
+            <a class="quick-action" href="#track-case">
+              <h4>Track Existing Support Ticket</h4>
+              <p>Real-time case timeline</p>
+            </a>
+
+            <a class="quick-action" href="mailto:britishhomesdirecthelpline@gmail.com?subject=General%20Inquiry%20-%20British%20Homes%20Direct">
+              <h4>General Inquiry</h4>
+              <p>Pre-sale & product questions</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wizard">
+      <div class="container">
+        <div class="section-head">
+          <h3>BHD Resolution Wizard</h3>
+          <p>
+            Open a new support case. Direct Web3Forms submission · Average resolution under 36 hours.
+          </p>
+        </div>
+
+        <div class="wizard-card">
+          <form
+            id="wizardForm"
+            class="web3form"
+            data-success="Your new support case has been opened successfully."
+            data-subject="New Support Case - British Homes Direct"
+            novalidate
+          >
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New Support Case - British Homes Direct" />
+            <input type="hidden" name="from_name" value="British Homes Direct Resolution Wizard" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="steps" aria-label="Wizard progress">
+              <div class="step active" data-step="1">1<br />Order</div>
+              <div class="step" data-step="2">2<br />Product</div>
+              <div class="step" data-step="3">3<br />Issue</div>
+              <div class="step" data-step="4">4<br />Resolution</div>
+              <div class="step" data-step="5">5<br />Evidence</div>
+            </div>
+
+            <div class="wizard-page active" data-page="1">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label for="wiz-name">Full Name</label>
+                  <input id="wiz-name" name="full_name" type="text" placeholder="Jane Whitfield" required />
+                </div>
+                <div class="form-group">
+                  <label for="wiz-email">Email Address</label>
+                  <input id="wiz-email" name="email" type="email" placeholder="jane@example.co.uk" required />
+                </div>
+                <div class="form-group">
+                  <label for="wiz-postcode">Postcode</label>
+                  <input id="wiz-postcode" name="postcode" type="text" placeholder="SW1A 1AA" required />
+                </div>
+                <div class="form-group">
+                  <label for="wiz-order">BHD Order Number</label>
+                  <input id="wiz-order" name="order_number" type="text" placeholder="BHD-10492" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-page" data-page="2">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label for="wiz-product">Product name</label>
+                  <input id="wiz-product" name="product_name" type="text" placeholder="Wall panel set" required />
+                </div>
+                <div class="form-group">
+                  <label for="wiz-sku">SKU or variant</label>
+                  <input id="wiz-sku" name="sku_variant" type="text" placeholder="If known" />
+                </div>
+                <div class="form-group">
+                  <label for="wiz-delivery-date">Delivery date</label>
+                  <input id="wiz-delivery-date" name="delivery_date" type="date" />
+                </div>
+                <div class="form-group">
+                  <label for="wiz-qty">Quantity affected</label>
+                  <input id="wiz-qty" name="quantity_affected" type="number" min="1" placeholder="1" />
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-page" data-page="3">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label for="wiz-issue-type">Issue type</label>
+                  <select id="wiz-issue-type" name="issue_type" required>
+                    <option value="">Select an issue</option>
+                    <option>Damaged on arrival</option>
+                    <option>Return request</option>
+                    <option>Refund request</option>
+                    <option>Missing parts</option>
+                    <option>Wrong item received</option>
+                    <option>Courier delay</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="wiz-condition">Parcel condition</label>
+                  <select id="wiz-condition" name="parcel_condition">
+                    <option value="">Select parcel condition</option>
+                    <option>Outer packaging intact</option>
+                    <option>Outer packaging dented</option>
+                    <option>Outer packaging torn</option>
+                    <option>Wet on arrival</option>
+                    <option>Not applicable</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="wiz-details">Issue details</label>
+                <textarea
+                  id="wiz-details"
+                  name="issue_details"
+                  placeholder="Describe the problem, dates, courier details and any previous contact."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="wizard-page" data-page="4">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label for="wiz-resolution">Preferred resolution</label>
+                  <select id="wiz-resolution" name="preferred_resolution" required>
+                    <option value="">Select a resolution</option>
+                    <option>Refund</option>
+                    <option>Replacement</option>
+                    <option>Exchange</option>
+                    <option>Collection and refund</option>
+                    <option>Technical assistance</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="wiz-contact-method">Preferred contact method</label>
+                  <select id="wiz-contact-method" name="preferred_contact_method">
+                    <option>Email</option>
+                    <option>WhatsApp</option>
+                    <option>Phone</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="wiz-notes">Additional notes</label>
+                <textarea
+                  id="wiz-notes"
+                  name="additional_notes"
+                  placeholder="Anything else our UK specialist should know before reviewing your case?"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="wizard-page" data-page="5">
+              <div class="form-group">
+                <label for="wiz-evidence">Evidence links</label>
+                <textarea
+                  id="wiz-evidence"
+                  name="evidence_links"
+                  placeholder="Paste links to photos, videos or shared folders if applicable."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="wiz-ack">Acknowledgement</label>
+                <select id="wiz-ack" name="acknowledgement" required>
+                  <option value="">Please confirm</option>
+                  <option>I confirm the information provided is accurate</option>
+                </select>
+              </div>
+
+              <p class="small-muted">
+                For direct image attachments, customers can also email britishhomesdirecthelpline@gmail.com with their order number in the subject line.
+              </p>
+            </div>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn btn-outline" id="prevBtn">← Back</button>
+              <button type="button" class="btn btn-primary" id="nextBtn">Continue</button>
+              <button type="submit" class="btn btn-primary" id="submitWizard" style="display:none;">Submit case</button>
+            </div>
+
+            <div class="success-message"></div>
+            <div class="error-message"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="track-case">
+      <div class="container">
+        <div class="section-head">
+          <h3>Track My Case</h3>
+          <p>
+            Enter your details. Provide your information below — our UK team responds fastest via WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="tracker-card">
+            <form id="trackForm">
+              <div class="form-group">
+                <label for="track-name">Full name</label>
+                <input id="track-name" type="text" placeholder="Jane Whitfield" required />
+              </div>
+
+              <div class="form-group">
+                <label for="track-email">Email</label>
+                <input id="track-email" type="email" placeholder="jane@example.co.uk" required />
+              </div>
+
+              <div class="form-group">
+                <label for="track-order">Order number</label>
+                <input id="track-order" type="text" placeholder="BHD-10492" required />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Look up my case</button>
+            </form>
+
+            <div id="caseResult" class="success-message" style="display:none;"></div>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-top:0;">Case status guidance</h4>
+            <p class="small-muted">
+              This demo tracker displays a sample case timeline based on the information entered. For live case status,
+              integrate this form with your CRM, helpdesk or ticketing platform API.
+            </p>
+            <div style="margin-top:18px;">
+              <div class="chip" style="background:#eef6ff; color:#0f4c81; border-color:#d6e6f5;">Submitted</div>
+              <div class="chip" style="background:#eef6ff; color:#0f4c81; border-color:#d6e6f5; margin-top:10px;">Under review</div>
+              <div class="chip" style="background:#eef6ff; color:#0f4c81; border-color:#d6e6f5; margin-top:10px;">Awaiting evidence</div>
+              <div class="chip" style="background:#eef6ff; color:#0f4c81; border-color:#d6e6f5; margin-top:10px;">Approved for refund / replacement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="help-centre">
+      <div class="container">
+        <div class="section-head">
+          <h3>Help Centre</h3>
+          <p>
+            Returns policy, courier collections & oversized parcel support.
+          </p>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item open">
+            <button class="faq-question" type="button">
+              <span>How do I return oversized panels (240cm - 280cm)?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              We offer free doorstep courier collection for oversized parcels. Repackage panels in the original
+              sleeve where possible; our partner courier will collect within 48 hours of approval.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>When will I see my refund?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Once your return or claim is approved and processed, refunds are typically issued back to the original
+              payment method. Bank processing times can vary depending on your provider.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What does the 30-Day Money-Back Guarantee cover?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              The guarantee covers eligible return and refund requests made within 30 days of delivery, subject to
+              product condition, order type and any evidence required for damaged or incorrect goods.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can I track an active complaint?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Use the Track My Case section with your name, email and order number. For the fastest live update,
+              message the support desk on WhatsApp and include your order number.
+            </div>
+          </div>
+        </div>
+
+        <div class="support-strip">
+          <div>
+            <h4>WhatsApp Support</h4>
+            <p>Fastest route for updates, missing documents and active case replies.</p>
+          </div>
+          <a class="btn btn-secondary" href="https://wa.me/447474713752" target="_blank" rel="noopener">Open WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 British Homes Direct · Customer Support Hub</div>
+      <div>
+        <a href="tel:+447474713752">+447474713752</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:britishhomesdirecthelpline@gmail.com">britishhomesdirecthelpline@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="cookie-content">
+      <div class="cookie-copy">
+        <h4>We value your privacy</h4>
+        <p>
+          We use analytics cookies to understand how customers use this support hub and improve it.
+          No advertising, no third-party sharing. You can change your choice anytime.
+        </p>
+      </div>
+      <div class="cookie-actions">
+        <button class="btn btn-primary" id="acceptCookies">Accept analytics</button>
+        <button class="btn btn-outline" id="declineCookies">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabase-config.js"></script>
+  <script>
+    (function() {
+      if (window.BHD_APP_INITIALIZED) return;
+      window.BHD_APP_INITIALIZED = true;
+
+      const SUBMIT_ENDPOINT = "/api/submit";
+      const TRACK_ENDPOINT = "/api/track";
+      const STORAGE_KEY = "bhd_support_cases";
+      const { url, anonKey } = window.SUPABASE_CONFIG || {};
+      const sbClient = url && anonKey && url !== "YOUR_SUPABASE_URL" && anonKey !== "YOUR_SUPABASE_ANON_KEY"
+        ? window.supabase.createClient(url, anonKey)
+        : null;
+
+      // Mobile Navigation Toggle
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          navToggle.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        });
+
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navToggle.classList.remove("active");
+            navMenu.classList.remove("active");
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navToggle.classList.remove("active");
+            navMenu.classList.remove("active");
+          }
+        });
+      }
+
+    function loadStoredCases() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (error) {
+          console.warn("Error loading cases:", error);
+          return [];
+        }
+      }
+
+      function saveStoredCases(cases) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(cases));
+        } catch (error) {
+          console.error("Error saving cases:", error);
+        }
+      }
+
+      function findStoredCase(name, email, order) {
+        const lowerName = (name || "").trim().toLowerCase();
+        const lowerEmail = (email || "").trim().toLowerCase();
+        const lowerOrder = (order || "").trim().toLowerCase();
+        const cases = loadStoredCases();
+
+        if (!lowerName && !lowerEmail && !lowerOrder) {
+          return null;
+        }
+
+        return cases.find((entry) => {
+          const entryName = (entry.data?.full_name || "").trim().toLowerCase();
+          const entryEmail = (entry.data?.email || "").trim().toLowerCase();
+          const entryOrder = (entry.data?.order_number || entry.data?.order || "").trim().toLowerCase();
+          return (!lowerName || entryName === lowerName) && (!lowerEmail || entryEmail === lowerEmail) && (!lowerOrder || entryOrder === lowerOrder);
+        });
+      }
+
+      async function submitToBackend(payload) {
+        // Use localStorage for all case storage (no server needed)
+        const cases = loadStoredCases();
+        const entry = {
+          id: `BHD-${Date.now().toString(36).toUpperCase()}`,
+          type: payload.formType === "wizard" ? "wizard" : "complaint",
+          status: "Received",
+          submittedAt: new Date().toISOString(),
+          data: payload.data
+        };
+
+        cases.unshift(entry);
+        saveStoredCases(cases);
+
+        return {
+          success: true,
+          caseId: entry.id,
+          message: payload.formType === "wizard"
+            ? "Your support case has been received! Case ID: " + entry.id + ". Track it below using your name and email."
+            : "Your complaint has been received! Case ID: " + entry.id + ". Track it below using your name and email."
+        };
+      }
+
+      async function lookupCase(name, email, order) {
+        // Look up case from localStorage only (no server needed)
+        const found = findStoredCase(name, email, order);
+        if (!found) {
+          return {
+            success: false,
+            message: "We could not find a matching case. Please check your details or submit a new case."
+          };
+        }
+
+        return {
+          success: true,
+          case: {
+            id: found.id,
+            name: found.data?.full_name || name,
+            email: found.data?.email || email,
+            orderNumber: found.data?.order_number || found.data?.order || order,
+            status: found.status || "Received"
+          },
+          timeline: [
+            "✓ Case logged successfully",
+            found.type === "wizard" ? "✓ Assigned to UK resolutions desk" : "✓ Complaint review initiated",
+            "Status: " + (found.status || "Received")
+          ],
+          message: "Case details retrieved."
+        };
+      }
+
+      function validateCurrentPage() {
+        const activePage = wizardForm.querySelector(`.wizard-page[data-page="${currentPage}"]`);
+        const fields = activePage.querySelectorAll("input, select, textarea");
+        for (const field of fields) {
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          return false;
+        }
+      }
+      return true;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (!validateCurrentPage()) return;
+      if (currentPage < 5) {
+        currentPage++;
+        updateWizard();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updateWizard();
+      }
+    });
+
+    updateWizard();
+
+    async function submitWeb3Form(form) {
+      const successBox = form.querySelector(".success-message");
+      const errorBox = form.querySelector(".error-message");
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      successBox.style.display = "none";
+      errorBox.style.display = "none";
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const payload = {
+        formType: form.id === "wizardForm" ? "wizard" : "complaint",
+        data: Object.fromEntries(new FormData(form).entries())
+      };
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      try {
+        const result = await submitToBackend(payload);
+
+        if (result.success) {
+          successBox.textContent = result.message || form.dataset.success || "Form submitted successfully.";
+          successBox.style.display = "block";
+          form.reset();
+
+          if (form.id === "wizardForm") {
+            currentPage = 1;
+            updateWizard();
+          }
+
+          form.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          throw new Error(result.message || "Submission failed.");
+        }
+      } catch (error) {
+        errorBox.textContent = "We could not submit your form right now. Please try again or email britishhomesdirecthelpline@gmail.com.";
+        errorBox.style.display = "block";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = form.id === "wizardForm" ? "Submit case" : "Submit complaint";
+      }
+    }
+
+    document.querySelectorAll(".web3form").forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        await submitWeb3Form(form);
+      });
+    });
+
+    const trackForm = document.getElementById("trackForm");
+    const caseResult = document.getElementById("caseResult");
+
+    if (trackForm) {
+      trackForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("track-name").value.trim();
+        const email = document.getElementById("track-email").value.trim();
+        const order = document.getElementById("track-order").value.trim();
+
+        if (!name || !email || !order) {
+          trackForm.reportValidity();
+          return;
+        }
+
+        try {
+          const result = await lookupCase(name, email, order);
+
+          if (!result.success) {
+            throw new Error(result.message || "No case found.");
+          }
+
+          const timeline = result.timeline || [];
+          caseResult.innerHTML = `
+            <strong>Case found for ${result.case?.name || name}</strong><br /><br />
+            Case ID: ${result.case?.id || "N/A"}<br />
+            Order: ${result.case?.orderNumber || order}<br />
+            Contact: ${result.case?.email || email}<br />
+            Status: ${result.case?.status || "Received"}<br /><br />
+            <strong>Timeline</strong><br />
+            ${timeline.map((item) => `- ${item}`).join("<br />")}
+          `;
+          caseResult.style.display = "block";
+        } catch (error) {
+          console.error("Lookup error:", error);
+          caseResult.innerHTML = `<strong>We could not look up that case.</strong><br /><br />${error.message}`;
+          caseResult.style.display = "block";
+        }
+      });
+    }
+
+    const cookieBanner = document.getElementById("cookieBanner");
+    const acceptCookies = document.getElementById("acceptCookies");
+    const declineCookies = document.getElementById("declineCookies");
+    const cookieKey = "bhd_cookie_choice";
+
+    function initCookieBanner() {
+      const saved = localStorage.getItem(cookieKey);
+      if (!saved) {
+        cookieBanner.classList.add("show");
+      }
+    }
+
+    acceptCookies.addEventListener("click", () => {
+      localStorage.setItem(cookieKey, "accepted");
+      cookieBanner.classList.remove("show");
+    });
+
+    declineCookies.addEventListener("click", () => {
+      localStorage.setItem(cookieKey, "declined");
+      cookieBanner.classList.remove("show");
+    });
+
+    initCookieBanner();
+    })();
+  </script>
+</body>
+</html>
